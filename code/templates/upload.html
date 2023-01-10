@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<meta charset="utf-8">
+<title></title>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+    integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+    crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf-8">
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById("button").addEventListener("click", test);
+        function test() {
+            socket.emit('test')
+        }
+        var socket = io.connect();
+        socket.on('connect', function () {
+            console.log('CONNECT');
+        })
+        socket.on('status_response', function (msg) {
+            console.log(msg)
+            var date = new Date();
+            document.getElementById('progressBar').innerHTML = msg.data + '<br>' + date
+            console.log(msg.data)
+            console.log(date)
+        });
+    })
+</script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/rule.css') }}">
+
+</head>
+
+<body>
+    <div class="background" style="background-image:url(static/image/上傳空白.jpg);">
+        <div class="upload-icon">
+            <label for="upload_input">
+                <p class="about-text" style="text-align:center;	top: 45%;position: relative;">選擇檔案</p>
+                <form action="" method="POST" enctype=multipart/form-data>
+                    <p><input type=file name=file id="upload_input" class="upload-icon" style="display:none;">
+                        <input type="submit" id="button" class="btn" value="submit"
+                            style="position:absolute;bottom:15%;right: 10%;">
+                    <div id="progressBar">aaa</div>
+            </label>
+        </div>
+        <a href="/" class="back-button"><img src="/static/image/回主頁.png"></a>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+
+    function postData(url, data) {
+        // Default options are marked with *
+        return fetch(url, {
+            body: JSON.stringify(data), // must match 'Content-Type' header
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, same-origin, *omit
+            headers: {
+                'user-agent': 'Example',
+                'content-type': 'application/json'
+            },
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, cors, *same-origin
+            redirect: 'follow', // manual, *follow, error
+            referrer: 'no-referrer', // *client, no-referrer
+        })
+            .then(response => response.json()) // 輸出成 json
+    }
+</script>

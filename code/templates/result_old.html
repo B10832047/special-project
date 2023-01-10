@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',    filename='css/result.css') }}">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://static.pureexample.com/js/flot/excanvas.min.js"></script>
+  <script src="http://static.pureexample.com/js/flot/jquery.flot.min.js"></script>
+  <script src="http://static.pureexample.com/js/flot/jquery.flot.pie.min.js"></script>
+</head>
+
+<body>
+  <div class="background" style="background-image:url(static/image/result.jpg);">
+  </div>
+  <nav>
+    <div class=result-box>
+      <h1>Result</h1>
+      <div class="malware-box">
+        <h1>Accuracy</h1>
+        <div id="flotcontainer"></div>
+        <div id="legendPlaceholder"></div>
+      </div>
+      <div class="benign-box">
+        <h1>Precision</h1>
+        <div id="flotcontainer2"></div>
+        <div id="legendPlaceholder"></div>
+      </div>
+      <div class="overview-box">
+        <h1>Recall</h1>
+        <div id="flotcontainer3"></div>
+        <div id="legendPlaceholder"></div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
+<script type="text/javascript">
+  $(function () {
+    var feedback = eval('{{accuracy|safe}}')
+    var score = parseFloat(feedback)
+    var data = [
+      { label: "data1", data: score },
+      { label: "data2", data: (1 - score) },
+
+    ];
+    var feedback = eval('{{precision|safe}}')
+    var precision = parseFloat(feedback)
+    var data2 = [
+      { label: "data1", data: precision },
+      { label: "data2", data: (1 - precision) },
+
+    ];
+    var feedback = eval('{{recall|safe}}')
+    var recall = parseFloat(feedback)
+    var data3 = [
+      { label: "data1", data: recall },
+      { label: "data2", data: (1 - recall) },
+
+    ];
+    var options = {
+      series: {
+        pie: { show: true }
+      },
+      legend: {
+        show: false
+      }
+    };
+
+    $.plot($("#flotcontainer"), data, options);
+    $.plot($("#flotcontainer2"), data2, options);
+    $.plot($("#flotcontainer3"), data3, options);
+  });
+
+</script>

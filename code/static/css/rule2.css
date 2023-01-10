@@ -1,0 +1,92 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url(背景.jpg) no-repeat;
+  background-size: cover;
+}
+
+.login-box {
+  width: 600px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+
+  position: fixed;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.login-box h1 {
+  float: left;
+  font-size: 40px;
+  border-bottom: 6px solid #4caf50;
+  margin-bottom: 10px;
+  padding: 13px 0;
+}
+
+.rule-box {
+  margin: 0px auto;
+  height: 400px;
+  width: 500px;
+  overflow: auto;
+  background: #EEEEEE;
+}
+
+.rule-box p1 {
+  color: black;
+  text-align: "left";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nav {
+  /*長條背景*/
+  background-color: black;
+  text-align: center;
+  font-size: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  /*加線*/
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 20px;
+  background-color: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: rgb(88, 88, 88);
+}

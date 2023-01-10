@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/tool.css') }}">
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>Upload</h1>
+    
+        <div class="textbox">
+          <form action= "/index" method ="GET">
+	    <p>user_name：</p>
+	    <input type= "text"  name = "user" placeholder="Value">
+            <p>preproccessing tool：</p>
+            <input type="text"  name = "preproccessing" placeholder="Value">
+            <p>Model tool：</p>
+            <input type="text"  name = model placeholder="Value">
+            <p>Other tool：</p>
+            <input type="text" name = other placeholder="Value">
+            <a herf = "/index">
+              <button class = "btn">submit</button>
+            </a>
+            
+          </form>
+          
+                
+        </div>
+    </div>
+
+</body>
+
+
+
+<script>
+ 
+
+
+  function postData(url, data) {
+    // Default options are marked with *
+    return fetch(url, {
+        body: JSON.stringify(data), // must match 'Content-Type' header
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, same-origin, *omit
+        headers: {
+            'user-agent': 'Example',
+            'content-type': 'application/json'
+        },
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, cors, *same-origin
+        redirect: 'follow', // manual, *follow, error
+        referrer: 'no-referrer', // *client, no-referrer
+    })
+        .then(response => response.json()) // 輸出成 json
+}
+
+function submit(){
+  const preproccessing = document.getElementById('preproccessing').value;
+  const model = document.getElementById('model').value;
+  const other = document.getElementById('other').value;
+
+  const tool = {
+    preproccessing,
+    model,
+    other
+  }
+  postData('', tool)
+  .then(data=>{
+    console.log(tool);
+  })
+}
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/rule.css') }}">
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+
+</script>
+</head>
+
+<body>
+  <div class="background" style="background-image:url(static/image/3_改.jpg);">
+    <form action="位置" name="fileForm" method='post'>
+      <div class="about" style="background-color:#a2afe6;">
+        <div class="about-body">
+          <p class="about-text">
+	  使用者上傳的 detector 須符合以下規範方可正常執行： <br>
+	  1. 上傳的檔案格式須為整個 detector 的壓縮檔，僅接受 .zip 格式<br>
+	  2. detector 中需包含主程式 main.py，並位於檔案資料夾最上層<br>
+	  3. detector 的執行方式為：python3 main.py -i &ltfile name&gt<br>
+          4. detector 的輸出為一個數字<br>
+          5. detector 中須包含 requirement.txt，並位於檔案資料夾最上層<br>
+          6. 上傳之路徑為含有"benign"及"malware"兩個資料夾之資料夾路徑<br>
+          </p>
+          <div class="check" style="text-align:right;">
+            <input id="one-checkbox" type="checkbox" /> 我同意上述規則
+          </div>
+          <input id="button" type="button" class="btn" value="next" />
+        </div>
+
+
+      </div>
+      <a href="/" class="back-button"><img src="/static/image/回主頁.png"></a>
+</body>
+
+
+
+</html>
+<script>
+  $("body").on("click", "#button", function () {
+    if ($("#one-checkbox").prop("checked")) {
+      window.location.href = '/upload';
+    } else {
+      alert("未勾選");
+    }
+  });
+
+</script>

@@ -1,0 +1,297 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url(背景.jpg) no-repeat;
+  background-size: cover;
+}
+
+.login-box{
+  width: 600px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+
+    position: fixed;
+    transform: translate(-50%, -50%) ;
+    background-color :rgba(0, 0, 0, 0.8);
+    text-align: center;
+    color : white ;
+    border-radius: 10px;
+    padding: 10px 20px;
+    flex-wrap: wrap ;
+}
+
+.login-box h1{
+  
+  font-size: 40px;
+  border-bottom: 6px solid #4caf50;
+  margin-bottom: 10px;
+  padding: 13px 0;
+}
+
+.login-box h2{
+    float: left;
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 13px 0;
+}
+
+
+.login-box p{
+    float: left;
+    font-size: 20px;
+
+  }
+
+.textbox{
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+
+}
+
+.textbox input{
+  background: none;
+  color: white;
+  font-size: 18px;
+  width: 80%;
+  float: left;
+  margin: 0 10px;
+  border-bottom: 1px solid #4caf50;
+}
+
+
+
+.btn{
+  width: 100%;
+  background: none;
+  border: 2px solid #4caf50;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 12px 0;
+}
+.btn:hover{
+  background-color: rgb(37, 37, 37);
+}
+
+
+
+nav{ /*長條背景*/
+  background-color: black;
+  text-align: center;
+  font-size : 0 ;
+}
+
+nav a{
+  color :#fff;
+  text-decoration: none; /*加線*/
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 20px ;
+  background-color: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+nav a:hover{
+  background-color: rgb(88, 88, 88);
+}
+
+
+.upload_cover {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    cursor: pointer;
+    background: #efefef;
+    border: 1px solid #595656;
+    }
+    #upload_input {
+    display: none;
+    }
+    .upload_icon {
+    font-weight: bold;
+    font-size: 180%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 20%;
+    }
+    .delAvatar {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    }
+
+
+    ul.drop-down-menu a{
+        padding: 13px 0;
+        font-size: 30px;
+        color: #4caf50;
+        text-decoration : none;
+      }
+    
+    
+    
+      /* you can adjust everything in here.  */
+      :root {
+        --floating-window-background: black;
+        --floating-window-padding: 1rem;
+        --floating-window-header-height: 4rem;
+        --floating-window-footer-height: 4rem;
+        --floating-window-width: 60%;
+        --floating-window-height: 40%;
+        --floating-window-animation-duration: 0.5s;
+        --floating-window-border: 3px solid green;
+        --floating-window-border-radius: 10px;
+      }
+    
+      .floating-window {
+        background-color: var(--floating-window-background);
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: flex;
+        height: var(--floating-window-height);
+        width: var(--floating-window-width);
+        justify-content: flex-start;
+        align-items: center;
+        padding: var(--floating-window-padding);
+        border: var(--floating-window-border);
+        border-radius: var(--floating-window-border-radius);
+      }
+    
+      .floating-window.floating-window-enabled {
+        display: flex;
+        animation: floating-window-enabled-animation var(--floating-window-animation-duration) ease;
+      }
+    
+      @keyframes floating-window-enabled-animation {
+        0% {
+          width: 0;
+          height: 0;
+        }
+    
+        100% {
+          height: var(--floating-window-height);
+          width: var(--floating-window-width);
+        }
+      }
+    
+      .floating-window.floating-window-disabled {
+        display: none;
+      }
+    
+      .floating-window>.floating-window-header {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: var(--floating-window-header-height);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+    
+      .floating-window>.floating-window-header>.floating-window-header-title {
+        color: white;
+      }
+    
+      .floating-window>.floating-window-header>.floating-window-header-close-button {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 2rem;
+        color: white;
+      }
+    
+      .floating-window>.floating-window-header>.floating-window-header-close-button:hover {
+        cursor: pointer;
+        color: rgb(200, 200, 200);
+      }
+    
+      .floating-window>.floating-window-body {
+        height: 15rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin: var(--floating-window-header-height) 0 0 0;
+        padding: 0 0 var(--floating-window-header-height) 0;
+        overflow: hidden;
+      }
+    
+     
+      .floating-window>.floating-window-footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: var(--floating-window-footer-height);
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        overflow: hidden;
+      }
+    
+      .floating-window>.floating-window-footer>* {
+        flex: 0 1 0;
+      }
+    
+      .grey-background {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    
+      .grey-background.grey-background-enabled {
+        display: block;
+        animation: grey-background-enabled-animation var(--floating-window-animation-duration) ease;
+      }
+    
+      @keyframes grey-background-enabled-animation {
+        from {
+          opacity: 0;
+        }
+    
+        to {
+          opacity: 1;
+        }
+      }
+    
+      .grey-background.grey-background-disabled {
+        display: none;
+        animation: grey-background-disabled-animation var(--floating-window-animation-duration) ease;
+      }
+    
+      @keyframes grey-background-disabled-animation {
+        from {
+          opacity: 1;
+        }
+    
+        to {
+          opacity: 0;
+        }
+      }
