@@ -100,8 +100,7 @@ def upload_file():
             new_name_dir = "./detector/modules/current_modules/" + "module_" + module_id
             os.rename(old_name_dir, new_name_dir)
             module_id = int(module_id)
-       #     score = (Detector.get_score(module_id))
-            score = "0.8"
+            score = (Detector.get_score(module_id))
             print(score)
             import shutil
             shutil.rmtree("./detector/modules/current_modules/" +
